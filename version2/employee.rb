@@ -24,12 +24,13 @@ class Employee
     end
 
     def self.search_by_role(string)
-        all.select{|employee| employee.role == string}
+        all.select{|employee| employee.role.name == string}
     end
 
     def get_promoted(role)
         self.role = role
         self.salary += 2000
+        self
     end
 
 end

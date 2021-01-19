@@ -30,8 +30,8 @@ class Employee
         Role.all.find{|role| role.manager.department == search_department}.employee
     end
 
-    def self.search_by_role(search_role)
-        Role.all.select{|role| role.name == search_role}.map(&:employee)
+    def self.search_by_role(string)
+        all.select{|employee| employee.role.name == string}
     end
 
     def get_promoted(new_role)

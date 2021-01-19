@@ -21,8 +21,8 @@ class Role
         employees.map(&:manager)
     end
 
+    #adds employee to existing role
     def add_employee(string,salary,manager)
-        self.new(self)
         Employee.new(string,salary,manager,self)
     end
 end

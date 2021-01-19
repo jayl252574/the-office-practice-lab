@@ -15,19 +15,19 @@ class Manager
     end
 
     def employees
-        Employess.all.select {|employee| employee.manager == self}
+        Employee.all.select {|employee| employee.manager == self}
     end
 
     def roles
-        employees.map(&:role)
+        employees.map(&:role).uniq
     end
 
     def self.all_departments
-        all.map(:department).uniq
+        all.map(&:department).uniq
     end
 
     def self.average_age
-        all.map(:age).sum / all.length.to_f
+        all.map(&:age).sum / all.length.to_f
     end
 
 
