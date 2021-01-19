@@ -6,6 +6,7 @@ class Role
 
     def initialize(name)
         @name = name
+        self.class.all << self
     end
 
     def self.all
@@ -24,3 +25,4 @@ class Role
         self.new(self)
         Employee.new(string,salary,manager,self)
     end
+end
